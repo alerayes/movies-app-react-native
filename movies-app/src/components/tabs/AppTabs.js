@@ -1,7 +1,7 @@
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-// import TVShowsContainer from '../containers/TVShowsContainer';
+import TVShowContainer from '../containers/TVShowContainer';
 import MoviesScreen from '../screens/MoviesScreen';
-// import SearchScreen from '../screens/SearchScreen';
+import SearchScreen from '../screens/SearchScreen';
 
 
 const Tab = createMaterialTopTabNavigator();
@@ -26,14 +26,14 @@ export default function MyTabs() {
         name="Movies" 
         component={MoviesScreen}
         />
-      {/* <Tab.Screen 
+      <Tab.Screen 
         name="Search" 
-        // component={SearchScreen}
+        component={SearchScreen}
       />
       <Tab.Screen 
         name="TV Show" 
-        // component={TVShowsContainer}
-      /> */}
+        component={TVShowContainer}
+      /> 
     </Tab.Navigator>
   );
 }
