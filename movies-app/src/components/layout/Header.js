@@ -7,7 +7,7 @@ const Header = () => {
             <Box safeAreaTop backgroundColor='hotpink'>
                 <HStack bg='hotpink' px={1} py={3} alignItems='center' justifyContent='center'>
                     <Text color='#fff' fontSize={20} fontWeight='bold'>
-                        Recipe App
+                        Movies App
                     </Text>
                 </HStack>
             </Box>
