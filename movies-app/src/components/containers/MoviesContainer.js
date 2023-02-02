@@ -28,7 +28,7 @@ const MoviesContainer = () => {
 
 
     return (
-        <Container>
+        <Container width='100%' marginX='5' centerContent>
             <DropdownForm fetchMovies={fetchMovies} />
 
          

@@ -5,8 +5,8 @@ const DropdownForm = props => {
     const { fetchMovies } = props
 
     return (
-        <FormControl on>
-            <VStack alignItems="center" space={4}  mx='auto' my={6} >
+        <FormControl>
+            <VStack space={2} width='80%' py={5}  mx='auto' my={4} >
                 <Select
                     minWidth='200'
                     accessibilityLabel='Choose Movie Type'
@@ -15,7 +15,7 @@ const DropdownForm = props => {
                         bg: "teal.600",
                         endIcon: <CheckIcon size="1" />
                     }}
-                    ml='20'
+                    // ml='20'
                     onValueChange={value => {
                         fetchMovies(value)
                     }}
