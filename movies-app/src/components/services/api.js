@@ -17,11 +17,40 @@ export const getMovies = async movieValue => {
 
     return results
     
-    
-    // console.log(results)
-    // console.log('PAGES', data.page)
-    // console.log(data.results[0])
-    // console.log(data.dates)
+}
 
-   
+// Search function 
+
+export const getSearchResults = async (searchValue, searchType) => {
+
+    const apiKey = APP_KEY
+    const searchURL = `https://api.themoviedb.org/3/search/${searchType}?api_key=${apiKey}&query=${searchValue}`
+
+    console.log(searchURL)
+
+    const res = await fetch(searchURL);
+    const data = await res.json()
+    const results = data.results
+
+    console.log(data)
+
+    return results
+
+}
+
+// Get TV shows function
+
+export const getTvShows = async tvShowValue => {
+
+    const apiKey = APP_KEY
+
+    const getTvShowsURL = `https://api.themoviedb.org/3/tv/${tvShowValue}?api_key=${apiKey}`
+
+    console.log(getTvShowsURL)
+
+    const res = await fetch(getTvShowsURL);
+    const data = await res.json()
+    const results = data.results
+
+    return results
 }

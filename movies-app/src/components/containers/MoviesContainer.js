@@ -9,14 +9,14 @@ import { getMovies } from "../services/api"
 const MoviesContainer = () => {
 
     const [isLoading, setIsLoading] = useState(false)
-    const [movies, setMovies] = useState([])
+    const [results, setResults] = useState([])
     const [movieValue, setMovieValue] = useState(null)
 
     const fetchMovies = value => {
         setIsLoading(true)
         getMovies(value).then(
-            movies => {
-                setMovies(movies)
+            results => {
+                setResults(results)
                 setIsLoading(false)
             },
             error => {
@@ -28,11 +28,11 @@ const MoviesContainer = () => {
 
 
     return (
-        <Container width='100%' marginX='5' centerContent>
+        <Container width='100%' marginX='3' centerContent>
             <DropdownForm fetchMovies={fetchMovies} />
 
          
-            { isLoading ? <Loading/> : <MoviesList movies={movies} /> } 
+            { isLoading ? <Loading/> : <MoviesList results={results} /> } 
         </Container>
     )
 }

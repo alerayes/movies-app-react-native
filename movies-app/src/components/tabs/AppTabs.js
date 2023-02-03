@@ -1,5 +1,5 @@
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import TVShowContainer from '../containers/TVShowContainer';
+import TVShowScreen from '../screens/TVShowScrren';
 import MoviesScreen from '../screens/MoviesScreen';
 import SearchScreen from '../screens/SearchScreen';
 
@@ -32,7 +32,7 @@ export default function MyTabs() {
       />
       <Tab.Screen 
         name="TV Show" 
-        component={TVShowContainer}
+        component={TVShowScreen}
       /> 
     </Tab.Navigator>
   );
