@@ -5,7 +5,7 @@ import Loading from "../layout/Loading"
 import { getTvShows } from '../services/api'
 import MoviesList from '../lists/MoviesList'
 
-const TVShowContainer = () => {
+const TVShowContainer = ({navigation}) => {
   const [isLoading, setIsLoading] = useState(false)
   const [results, setResults] = useState([])
   const [tvShowValue, setTvShowValue] = useState(null)
@@ -31,7 +31,7 @@ const TVShowContainer = () => {
   return(
     <Container width='100%' marginX='3' centerContent>
         <TvShowForm  fetchTvShows={fetchTvShows}/>
-        { isLoading ? <Loading/> : <MoviesList results={results} /> } 
+        { isLoading ? <Loading/> : <MoviesList results={results} navigation={navigation} /> } 
     </Container>
 
   )

@@ -54,3 +54,18 @@ export const getTvShows = async tvShowValue => {
 
     return results
 }
+
+// Get Details Function
+
+export const getDetails = async (value, id) => {
+
+    const apiKey = APP_KEY
+
+    const getDetailsURL = `https://api.themoviedb.org/3/${value}/${id}?api_key=${apiKey}`
+
+    const res = await fetch(getDetailsURL)
+    const data = await res.json()
+    const results = data
+
+    return results
+}

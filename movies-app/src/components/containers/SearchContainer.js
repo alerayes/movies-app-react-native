@@ -6,7 +6,7 @@ import MoviesList from "../lists/MoviesList"
 import { getSearchResults } from "../services/api"
 
 
-const SearchContainer = () => {
+const SearchContainer = ({navigation}) => {
   const [isLoading, setIsLoading] = useState(false)
   const [results, setResults] = useState([])
   const [searchType, setSearchType] = useState(null)
@@ -50,7 +50,7 @@ console.log(results)
         />
         {
           isLoading ? <Loading /> :
-          results.length > 0 ? <MoviesList results={results}/> :
+          results.length > 0 ? <MoviesList results={results} navigation={navigation} isSearch={true}/> :
           <Box>
             <Center>
               <Text fontWeight='bold' fontSize='xl' mt='40'>

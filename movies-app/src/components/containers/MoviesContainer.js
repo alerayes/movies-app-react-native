@@ -6,7 +6,7 @@ import MoviesList from "../lists/MoviesList"
 import { getMovies } from "../services/api"
 
 
-const MoviesContainer = () => {
+const MoviesContainer = ({navigation}) => {
 
     const [isLoading, setIsLoading] = useState(false)
     const [results, setResults] = useState([])
@@ -32,7 +32,7 @@ const MoviesContainer = () => {
             <DropdownForm fetchMovies={fetchMovies} />
 
          
-            { isLoading ? <Loading/> : <MoviesList results={results} /> } 
+            { isLoading ? <Loading/> : <MoviesList results={results} navigation={navigation} /> } 
         </Container>
     )
 }
